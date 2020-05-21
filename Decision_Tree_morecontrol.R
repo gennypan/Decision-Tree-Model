@@ -46,7 +46,7 @@ tree<-function(formula,traindata,testdata,method,opt_method=1,morecontrol=NULL,t
 	plot(ptree, uniform=TRUE,margin=0.1,main=title)
 	text(ptree, use.n=TRUE, all=TRUE, cex=.5)
 # create attractive postscript plot of tree 
-	post(ptree, file = "/Users/kanhuap/Projects/Partner NPS 2019/tree_v1.ps",title = title)
+	post(ptree, file = "/Users/Desktop/tree_v1.ps",title = title)
 	
 	dep_var<-unlist(strsplit(formula, "~"))[1]
 
