@@ -110,25 +110,3 @@ raw_nps_data_dt <- raw_nps_data[raw_nps_data$survey_flag>0&raw_nps_data$NPS != '
 # raw_nps_data_dt$NPS_n <- ifelse(raw_nps_data_dt$NPS == 'N','D',raw_nps_data_dt$NPS)
 
 # raw_nps_data_dt_1 <- raw_nps_data_dt[raw_nps_data_dt$Partner_Name!='GoFundMe',]
-
-a <- data_perc(raw_nps_data_dt[,c("NPS","managed","top20","How.would.you.describe.your.primary.job.function.","How.would.you.describe.yourÂ.role.with.your.employer.","How.long.have.you.been.interacting.with.WePay.",
-                                  "API","WePay.Website","Developer.documentation","Reliability.of.WePay.platform","Reporting.capabilities","Settlement.timeframe",
-                                  "Fraud.Protection","Supported.payment.methods","Geographical.footprint","Relationship.management","Technical.account.management","Sales.team",
-                                  "Integration.team","Product.team","API.support","Merchant.Partner.customer.support",
-                                  "Risk.operations","Chargeback.management")],12345,1)
-
-
-tree <- tree("NPS~managed+top20+API+WePay.Website+Developer.documentation+Reliability.of.WePay.platform+
-             Reporting.capabilities+Settlement.timeframe+Fraud.Protection+Supported.payment.methods+
-             Geographical.footprint+Relationship.management+Technical.account.management+Sales.team+
-             Integration.team+Product.team+API.support+Merchant.Partner.customer.support+Risk.operations+Chargeback.management", a$trainset, a$testset,
-           method = "class",opt_method=3, morecontrol = rpart.control(maxdepth = 4))
-
-# 
-# 
-# # Random Forest prediction of Kyphosis data
-# library(randomForest)
-# rf_fit <- randomForest(as.factor(NPS)~payment_rating+refund_rating+chargeback_rating+report_rating+support_rating+last_first_payment+blacklist
-#                     +tickets_n+cb_cnt_n+refund_cnt_n+ach_tpv_n+cc_tpv_n+managed,type="classification",data=a$trainset)
-# print(rf_fit) # view results 
-# importance(rf_fit) # importance of each predictor
