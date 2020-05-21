@@ -5,7 +5,7 @@ This package can deal with both classification and regression tree. Two model qu
 
 ## Install
 rpart is the library to train the decision tree model. If not installed already, run 
-```install.packages("ggplot2")```
+```install.packages("rpart")```
 
 ## Use Examples:
 Let's say the dataset is called NPS_prediction.
