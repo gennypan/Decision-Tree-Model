@@ -1,5 +1,5 @@
 # Decision-Tree-Model
-This package can deal with both classification and regression tree. Two model quality measures are:
+This package can deal with both classification and regression tree. Two model quality measures are:<br/>
 1.Impurity measure: Entropy and Gini --- Information index 
 2.The "rel error" is 1−R2  Root mean squared error;The "xerror" is related to the PRESS statistic. This is the error on the observations from cross validation data.
 
